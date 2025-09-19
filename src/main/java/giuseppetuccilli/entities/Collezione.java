@@ -9,6 +9,10 @@ import java.util.stream.Collectors;
 public class Collezione {
     private ArrayList<Gioco> collezione = new ArrayList<>();
 
+    public ArrayList<Gioco> getCollezione() {
+        return this.collezione;
+    }
+
     public void aggiungi(Gioco g) {
         this.collezione.add(g);
     }
@@ -20,6 +24,10 @@ public class Collezione {
     public List<Gioco> ricercaNumGiocatori(int n) {
         return this.collezione.stream().filter(gioco -> gioco instanceof GiocoTavolo)
                 .filter(gioco -> ((GiocoTavolo) gioco).getNumGiocatori() == n).toList();
+    }
+
+    public Gioco cercaId(int id) {
+        return this.collezione.stream().filter(g -> g.getId() == id).toList().getFirst();
     }
 
     @Override
