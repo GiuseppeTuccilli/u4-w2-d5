@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        int nId = 5;
+        int nId = 5; // viene incrementato ad ogni creazione di elemento e assegnato come id
         String op = "";
         int numOp = 0;
         String title;
@@ -30,7 +30,7 @@ public class Application {
         VideoGioco prova2 = new VideoGioco(4, "videogioco2", 2007, 40, 30, Platforms.PS5, Generes.RPG);
         GiocoTavolo tav1 = new GiocoTavolo(1, "tav1", 1995, 50, 3, 60);
         GiocoTavolo tav2 = new GiocoTavolo(2, "tav2", 1991, 30, 5, 70);
-        
+
 
         Collezione coll = new Collezione();
         coll.aggiungi(prova);
