@@ -1,14 +1,13 @@
 package giuseppetuccilli.entities;
 
-import java.util.UUID;
-
 public abstract class Gioco {
-    protected String id = UUID.randomUUID().toString();
+    protected int id;
     protected String titolo;
     protected int annoPubblicazione;
     protected double prezzo;
 
-    public Gioco(String titolo, int anno, double prezzo) {
+    public Gioco(int id, String titolo, int anno, double prezzo) {
+        this.id = id;
         this.titolo = titolo;
         this.annoPubblicazione = anno;
         this.prezzo = prezzo;
@@ -18,7 +17,7 @@ public abstract class Gioco {
         return this.prezzo;
     }
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 

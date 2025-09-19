@@ -29,12 +29,12 @@ public class Collezione {
                 '}';
     }
 
-    public void elimina(String id) {
+    public void elimina(int id) {
         boolean found = false;
         Iterator<Gioco> iter = this.collezione.iterator();
         while (iter.hasNext()) {
             Gioco g = iter.next();
-            if (g.getId().equals(id)) {
+            if (g.getId() == id) {
                 iter.remove();
                 found = true;
             }
@@ -62,12 +62,12 @@ public class Collezione {
 
     }
 
-    public Gioco find(String id) {
+    public Gioco find(int id) {
         Gioco element = null;
         Iterator<Gioco> iter = this.collezione.iterator();
         while (iter.hasNext()) {
             Gioco g = iter.next();
-            if (g.getId().equals(id)) {
+            if (g.getId() == id) {
                 element = g;
             }
         }
