@@ -19,6 +19,15 @@ public class GiocoTavolo extends Gioco {
         return this.numGiocatori;
     }
 
+    public void setNumGiocatori(int n) {
+        this.numGiocatori = n;
+    }
+
+    public void setMinDurata(int d) {
+        this.minDurata = d;
+    }
+
+
     @Override
     public String toString() {
         return "GiocoTavolo{" +

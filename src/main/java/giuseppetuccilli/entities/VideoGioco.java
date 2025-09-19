@@ -16,6 +16,19 @@ public class VideoGioco extends Gioco {
 
     }
 
+    public void setDurata(int d) {
+        this.durata = d;
+    }
+
+    public void setPiattaforme(Platforms p) {
+        this.piattaforme = p;
+    }
+
+    public void setGenere(Generes g) {
+        this.genere = g;
+    }
+
+
     @Override
     public String toString() {
         return "VideoGioco{" +

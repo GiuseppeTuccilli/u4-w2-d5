@@ -2,7 +2,7 @@ package giuseppetuccilli.entities;
 
 import java.util.UUID;
 
-public class Gioco {
+public abstract class Gioco {
     protected String id = UUID.randomUUID().toString();
     protected String titolo;
     protected int annoPubblicazione;
@@ -11,9 +11,6 @@ public class Gioco {
     public Gioco(String titolo, int anno, double prezzo) {
         this.titolo = titolo;
         this.annoPubblicazione = anno;
-        if (prezzo <= 0) {
-            throw new RuntimeException("il prezzo deve essere maggiore di 0");
-        }
         this.prezzo = prezzo;
     }
 
@@ -23,6 +20,18 @@ public class Gioco {
 
     public String getId() {
         return this.id;
+    }
+
+    public void setTitolo(String t) {
+        this.titolo = t;
+    }
+
+    public void setPrezzo(double p) {
+        this.prezzo = p;
+    }
+
+    public void setAnnoPubblicazione(int a) {
+        this.annoPubblicazione = a;
     }
 
     @Override

@@ -28,6 +28,8 @@ public class Application {
         coll.elimina(prova.getId());
         System.out.println(coll);
 
+        coll.Stats();
+
 
     }
 }
