@@ -26,10 +26,10 @@ public class Application {
 
         Scanner scanner = new Scanner(System.in);
 
-        VideoGioco prova = new VideoGioco(3, "titolo", 2005, 70, 30, Platforms.PC, Generes.OpenWorld);
-        VideoGioco prova2 = new VideoGioco(4, "titolo2", 2007, 40, 30, Platforms.PC, Generes.OpenWorld);
-        GiocoTavolo tav1 = new GiocoTavolo(1, "tav1", 1991, 50, 3, 60);
-        GiocoTavolo tav2 = new GiocoTavolo(2, "tav2", 1991, 50, 5, 60);
+        VideoGioco prova = new VideoGioco(3, "videogioco1", 2005, 70, 30, Platforms.PC, Generes.OpenWorld);
+        VideoGioco prova2 = new VideoGioco(4, "videogioco2", 2007, 40, 30, Platforms.PS5, Generes.RPG);
+        GiocoTavolo tav1 = new GiocoTavolo(1, "tav1", 1995, 50, 3, 60);
+        GiocoTavolo tav2 = new GiocoTavolo(2, "tav2", 1991, 30, 5, 70);
         System.out.println(prova);
 
         Collezione coll = new Collezione();

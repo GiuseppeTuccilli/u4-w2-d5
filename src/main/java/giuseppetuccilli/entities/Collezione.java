@@ -100,6 +100,7 @@ public class Collezione {
         System.out.println("gioco più costoso: " + exepnsive.getFirst());
         OptionalDouble med = OptionalDouble.of(this.collezione.stream().collect(Collectors.averagingDouble(g -> g.getPrice())));
         System.out.println("media dei prezzi: " + med);
+        System.out.println("");
 
     }
 }
