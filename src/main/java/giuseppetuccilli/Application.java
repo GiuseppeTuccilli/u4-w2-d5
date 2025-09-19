@@ -3,6 +3,7 @@ package giuseppetuccilli;
 import giuseppetuccilli.Enums.Generes;
 import giuseppetuccilli.Enums.Platforms;
 import giuseppetuccilli.entities.Collezione;
+import giuseppetuccilli.entities.Gioco;
 import giuseppetuccilli.entities.GiocoTavolo;
 import giuseppetuccilli.entities.VideoGioco;
 
@@ -185,13 +186,127 @@ public class Application {
                         } else {
                             System.out.println("nessun elemento trovato");
                         }
-
                     } catch (RuntimeException e) {
                         System.out.println("input non valido");
                     }
                     break;
                 case 5:
+                    int numP = 0;
+                    System.out.println("inserire il numero di giocatori");
+                    try {
+                        numP = Integer.parseInt(scanner.nextLine());
+                        if (!coll.ricercaNumGiocatori(numP).isEmpty()) {
+                            System.out.println(coll.ricercaNumGiocatori(numP));
+                        } else {
+                            System.out.println("nessun elemento trovato");
+                        }
+                    } catch (RuntimeException e) {
+                        System.out.println("input non valido");
+                    }
+                    break;
+                case 6:
+                    int idEl = 0;
+                    System.out.println("inserire l'id da eliminare");
+                    try {
+                        idEl = Integer.parseInt(scanner.nextLine());
+                        coll.elimina(idEl);
+                    } catch (RuntimeException e) {
+                        System.out.println("input non valido");
+                    }
+                    break;
+                case 7:
+                    int idMod = 0;
+                    System.out.println("inserire l'id del gioco da modificare");
+                    try {
+                        idMod = Integer.parseInt(scanner.nextLine());
+                        Gioco g = coll.find(idMod);
+                        if (g instanceof GiocoTavolo) {
+                            GiocoTavolo tG = (GiocoTavolo) g;
+                            String newTitle = "";
+                            int newA = 0;
+                            double newPr = 0;
+                            int newMin = 0;
+                            int newNumPl = 0;
+                            System.out.println("inserire il nuovo titolo");
+                            newTitle = scanner.nextLine();
+                            try {
+                                System.out.println("inserire il nuovo anno di pubblicazione");
+                                newA = Integer.parseInt(scanner.nextLine());
+                                System.out.println("inserire il nuovo prezzo");
+                                newPr = Double.parseDouble(scanner.nextLine());
+                                System.out.println("inserire la nuova durata media (minuti)");
+                                newMin = Integer.parseInt(scanner.nextLine());
+                                System.out.println("inserire il nuovo numero di giocatori");
+                                newNumPl = Integer.parseInt(scanner.nextLine());
+                                coll.modGiocoTavolo(tG, newTitle, newA, newPr, newMin, newNumPl);
+                            } catch (RuntimeException e) {
+                                System.out.println("input non valido");
+                                break;
+                            }
 
+                        } else {
+                            VideoGioco vG = (VideoGioco) g;
+                            String newTitle = "";
+                            int newA = 0;
+                            double newPr = 0;
+                            int newDur = 0;
+                            String newPlatChoose = "";
+                            Platforms newPlat = null;
+                            String newGenChoose = "";
+                            Generes newGen = null;
+                            System.out.println("inserire il nuovo titolo");
+                            newTitle = scanner.nextLine();
+                            try {
+                                System.out.println("inserire il nuovo anno di pubblicazione");
+                                newA = Integer.parseInt(scanner.nextLine());
+                                System.out.println("inserire il nuovo prezzo");
+                                newPr = Double.parseDouble(scanner.nextLine());
+                                System.out.println("inserire la nuova durata");
+                                newDur = Integer.parseInt(scanner.nextLine());
+                                System.out.println("nuova piattaforma");
+                                System.out.println("inserire 1 per PC; 2 per PS5; 3 per Xbox");
+                                newPlatChoose = scanner.nextLine();
+                                if (!newPlatChoose.equals("1") && !newPlatChoose.equals("2") && !newPlatChoose.equals("3")) {
+                                    System.out.println("input non valido");
+                                    break;
+                                }
+                                if (newPlatChoose.equals("1")) {
+                                    newPlat = Platforms.PC;
+                                } else if (newPlatChoose.equals("2")) {
+                                    newPlat = Platforms.PS5;
+                                } else if (newPlatChoose.equals("3")) {
+                                    newPlat = Platforms.XBOX;
+                                }
+                                System.out.println("nuovo genere");
+                                System.out.println("inserire 1 per RPG; 2 per Open World; 3 per Platform");
+                                newGenChoose = scanner.nextLine();
+                                if (!newGenChoose.equals("1") && !newGenChoose.equals("2") && !newGenChoose.equals("3")) {
+                                    System.out.println("input non valido");
+                                    break;
+                                }
+                                if (newGenChoose.equals("1")) {
+                                    newGen = Generes.RPG;
+                                } else if (newGenChoose.equals("2")) {
+                                    newGen = Generes.OpenWorld;
+                                } else if (newGenChoose.equals("3")) {
+                                    newGen = Generes.Platform;
+                                }
+                                coll.modVideoGioco(vG, newTitle, newA, newPr, newDur, newPlat, newGen);
+
+                            } catch (RuntimeException e) {
+                                System.out.println("input non valido");
+                                break;
+                            }
+                        }
+                    } catch (RuntimeException e) {
+                        System.out.println("input non valido");
+                    }
+                    break;
+                case 8:
+                    coll.stats();
+                    break;
+                default:
+                    System.out.println("input non valido");
 
             }
         }

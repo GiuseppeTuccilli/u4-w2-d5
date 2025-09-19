@@ -45,6 +45,7 @@ public class Collezione {
             if (g.getId() == id) {
                 iter.remove();
                 found = true;
+                System.out.println("elemento eliminato");
             }
         }
         if (!found) {
@@ -59,6 +60,8 @@ public class Collezione {
         g.setTitolo(t);
         g.setAnnoPubblicazione(a);
         g.setPrezzo(p);
+        System.out.println("modifica effettuata");
+        System.out.println(g);
     }
 
     public void modGiocoTavolo(GiocoTavolo g, String t, int a, double p, int m, int numP) {
@@ -67,6 +70,8 @@ public class Collezione {
         g.setPrezzo(p);
         g.setMinDurata(m);
         g.setNumGiocatori(numP);
+        System.out.println("modifica effettuata");
+        System.out.println(g);
 
     }
 
@@ -79,10 +84,13 @@ public class Collezione {
                 element = g;
             }
         }
+        if (element == null) {
+            System.out.println("gioco non trovato");
+        }
         return element;
     }
 
-    public void Stats() {
+    public void stats() {
         System.out.println("Statistiche della collezione:");
         List<Gioco> videos = this.collezione.stream().filter(gioco -> gioco instanceof VideoGioco).toList();
         List<Gioco> tavolos = this.collezione.stream().filter(gioco -> gioco instanceof GiocoTavolo).toList();
