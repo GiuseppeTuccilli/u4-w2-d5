@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class Application {
 
     public static void main(String[] args) {
-        int nId = 5; // viene incrementato ad ogni creazione di elemento e assegnato come id
+        int nId = 4; // viene incrementato ad ogni creazione di elemento e assegnato come id
         String op = "";
         int numOp = 0;
         String title;
