@@ -30,7 +30,7 @@ public class Application {
         VideoGioco prova2 = new VideoGioco(4, "videogioco2", 2007, 40, 30, Platforms.PS5, Generes.RPG);
         GiocoTavolo tav1 = new GiocoTavolo(1, "tav1", 1995, 50, 3, 60);
         GiocoTavolo tav2 = new GiocoTavolo(2, "tav2", 1991, 30, 5, 70);
-        System.out.println(prova);
+        
 
         Collezione coll = new Collezione();
         coll.aggiungi(prova);
