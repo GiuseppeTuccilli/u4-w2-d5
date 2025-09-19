@@ -155,6 +155,10 @@ public class Application {
                     System.out.println("inserire il numero di giocatori");
                     try {
                         numPl = Integer.parseInt(scanner.nextLine());
+                        if (numPl < 2 || numPl > 10) {
+                            System.out.println("input non valido");
+                            break;
+                        }
                     } catch (Exception e) {
                         System.out.println("input non valido");
                         break;

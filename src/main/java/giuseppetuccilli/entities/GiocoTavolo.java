@@ -7,9 +7,7 @@ public class GiocoTavolo extends Gioco {
     public GiocoTavolo(int id, String titolo, int anno, double prezzo, int giocatori, int minDurata) {
 
         super(id, titolo, anno, prezzo);
-        if (giocatori < 2 || giocatori > 10) {
-            throw new RuntimeException("il num di giocatori deve essere tra 2 e 10");
-        }
+        
         this.numGiocatori = giocatori;
         this.minDurata = minDurata;
 
