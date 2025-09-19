@@ -75,6 +75,7 @@ public class Collezione {
 
     }
 
+    //questo metodo in realtà non servirebbe perchè c'è già cercaId(), è usato nell'eliminazione 
     public Gioco find(int id) {
         Gioco element = null;
         Iterator<Gioco> iter = this.collezione.iterator();
